@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><?php echo isset($title) ? $title : null ?> - Tân Cảng Miền Trung</title>
+  <meta name="keywords" content="Logistics, Xuất Khẩu, Nhập Khẩu, Xuất Nhập Khẩu, Vận Chuyển Hàng Hóa, Vận Chuyển, Hàng Siêu Trọng, Salan, Xà Lan, Sà Lan, Vận Chuyển Sà Lan, Thủ Tục Hải Quan, Hải Quan, Thông Quan, Mở Tờ Khai, Hun Trùng, Đóng Cont, Đóng Hàng, Forwarder, Stufffing, Unstuffing, Export, Import, Terminal, Port, Sea Port, Transhit, Transhipment, OOG, Over Weight, Over Hight, Over Length, Barge, Barging, Barge team, Barge Fleet, Inland Water Way, IWW, Ship, Vessel, Canoe, River, Channal, Pilot, Boarding Agent, Đại lý tàu, Husbanding Agent, Cambudia, Barging Service, Customs, Customs transhipment, Customs Clearance, EDI, Manifest, E-Manifest, chỉnh sửa Manifest, Adjust Manifest, Inbound, Outbound, Cargo, container, 20', 40', Reefer container, Flatrach, Tank, Hàng Quá Khổ, Cấm Tải, Chất lượng,">
+  <meta name="description" content="<?php echo isset($title) ? $title.' - ' : null ?>Logistics - Vận chuyển - Thủ tục hải quan - Manifest - Container">
+  <meta name="generator" content="Tan Cang Mien Trung">
+  <link href="<?php BASE_URL ?>/public/img/logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" type="text/css" href="<?php BASE_URL ?>/public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php BASE_URL ?>/public/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="<?php BASE_URL ?>/public/css/bootstrap-responsive.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="<?php BASE_URL ?>/public/js/ui/jquery-ui.css">
+  <script type="text/javascript" src="<?php BASE_URL ?>/public/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="<?php BASE_URL ?>/public/js/ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?php BASE_URL ?>/public/js/html5.js"></script>
+	<script type="text/javascript" src="<?php BASE_URL ?>/public/js/jquery.form.js"></script>
+	<script type="text/javascript" src="<?php BASE_URL ?>/public/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="<?php BASE_URL ?>/public/js/custom.js"></script>
+  <script type="text/javascript" src="<?php BASE_URL ?>/public/js/localization/messages_vi.js"></script>
+  <script type="text/javascript" src="<?php BASE_URL ?>/public/js/bootstrap.js"></script>
+  <script type="text/javascript" src="<?php BASE_URL ?>/public/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    ul,ol{padding:0;margin:0px;}
+    ul ul,ul ol,ol ol,ol ul{margin-bottom:0;}
+    li {line-height: 18px;}
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(function () {
+        setNavigation();
+        $('.home').click(function(){
+
+          var hrefval = $(this).attr("data");
+          
+              if(hrefval != "#") {
+                closeSidepage('.slide-content');
+                openSidepage(hrefval);
+
+                $('.nav li').removeClass('active');
+
+                $(this).closest('li').addClass('active');
+                $(this).closest('li').parents('li').addClass('active');
+
+                $("html, body").animate({ scrollTop: 0 }, 1);
+              }
+
+        });
+
+        
+        $('.png').click(function(){
+          $('#support').animate({
+            height: '300px'
+          }, 300);
+        });
+        $('.close').click(function(){
+          $('#support').animate({
+            height: '22px'
+          }, 300);
+        });
+
+
+      
+    });
+
+
+      function openSidepage(id) {
+        $(id).css({display: "block"});
+        $(id).animate({
+          left: '0px'
+        }, 500, 'easeOutBack'); 
+      }
+      
+      function closeSidepage(id){
+        
+        $(id).animate({
+          left: '-1500px'
+        }, 100, 'easeOutQuint');  
+        $(id).css({left: "-1500px",display: "none"});
+      }
+
+    function setNavigation() {
+        var path = window.location.pathname;
+        path = path.replace(/\/$/, "");
+        path = decodeURIComponent(path);
+
+        $(".nav a").each(function () {
+            var href = "/"+$(this).attr('data');
+
+            if (path.substring(0, href.length) === href) {
+                $(this).closest('li').addClass('active');
+                $(this).closest('li').parents('li').addClass('active');
+
+            }
+            if (window.location.hash == $(this).attr("data")) {
+              var hrefval = $(this).attr("data");
+          
+              if(hrefval != "#") {
+                closeSidepage('.slide-content');
+                openSidepage(hrefval);
+
+                $(this).closest('li').addClass('active');
+                $(this).closest('li').parents('li').addClass('active');
+
+                $("html, body").animate({ scrollTop: 0 }, 1);
+              }
+            }
+            
+        });
+
+        if (path == "" && window.location.hash == "") {
+            closeSidepage('.slide-content');
+            openSidepage('#index');
+
+            $('li').first().addClass('active');
+
+        }
+    }
+
+  </script>
+  
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="<?php echo $this->url('') ?>"><b><font style="color:#ffc153;">TCMT</font></b></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a  data="index" href="<?php echo $this->url('') ?>">Trang chủ</a>
+              <?php if ($_SESSION && $_SESSION['role_logined'] == 1) { ?>
+                <li><a data="menu" href="<?php echo $this->url('menu') ?>">Danh mục</a></li>
+              <?php } ?>
+              <?php if ($_SESSION && ($_SESSION['role_logined'] == 1 || $_SESSION['role_logined'] == 2)) { ?>
+                <li><a data="post" href="<?php echo $this->url('post') ?>">Bài viết</a></li>
+                <li><a data="#" href="#">Thư viện</a>
+                  <ul>
+                    <li><a data="album" href="<?php echo $this->url('album') ?>">Hình ảnh</a></li>
+                    <li><a data="video" href="<?php echo $this->url('video') ?>">Video</a></li>
+                    <li><a data="presentation" href="<?php echo $this->url('presentation') ?>">Presentation</a></li>
+                    <li><a data="brochure" href="<?php echo $this->url('brochure') ?>">Brochure</a></li>
+                  </ul>
+                </li>
+              <?php } ?>
+              <?php if ($_SESSION && $_SESSION['role_logined'] == 1) { ?>
+                <li><a data="user" href="<?php echo $this->url('user') ?>">Tài khoản</a></li>
+              <?php } ?>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+          <!-- Kiem tra dang nhap -->
+          <?php 
+          if ($_SESSION) {
+            ?>
+            <a class="logined" href="<?php echo $this->url('user/logout') ?>">&nbsp; | Logout</a><a class="logined" href="<?php echo BASE_URL.'/user/info/'.$_SESSION['userid_logined'] ?>"><b><i><?php echo $_SESSION['user_logined']; ?> </i></b></a>
+            <?php
+          }
+          else{
+            ?>
+            <a class="logined" href="<?php echo $this->url('user/login') ?>">Login</a>
+            <?php
+          }
+          ?>
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="container">
+    	
+			<?php echo $content; ?>
+      
+            
+        
+    </div> <!-- /container -->
+    
+    <footer>
+            <p>Copyright &copy; <?php echo date('Y') ?> by <a  href="<?php echo BASE_URL ?>">TCMT</a>. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>
